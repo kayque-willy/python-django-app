@@ -1,0 +1,36 @@
+--------------------------------- ARQUIVOS IMPORTANTES DJANGO ------------------------------------
+
+> .\scripts\activate //--------------// Ativa o ambiente Python, necessário para execução do projeto
+
+> .\manage.py //--------------// Executa o projeto pelo comando  -> $ py rundev manage.py
+
+--------------------------------- DIRETÓRIOS DO PROJETO E COMPONENTES ------------------------------------
+
+> .\project\... //--------------// Diretório com o nome do projeto criado pelo comando -> $ django-admin startproject nome-project . 
+
+> .\people\... //--------------// Diretório do componente app do projeto, criado pelo comando -> $  py .\manage.py startapp nome-app
+
+--------------------------------- ARQUIVOS DE CONFIGURAÇÃO DJANGO ------------------------------------
+
+> .\project\settings.py //--------------// Configuração do projeto
+    
+    INSTALLED_APPS = [...] //--------------// App componentes do projeto, devem ser definidos aqui
+    MIDDLEWARE = [...], TEMPLATES = [...], DATABASES = [...] //--------------// Demais configurações
+
+----------------------------------------- CONFIGURAÇÃO URL -----------------------------------------
+
+> .\project\urls.py //--------------// Configuração das URLS do projeto
+
+-----------------------------------------  COMPONENTE APP -----------------------------------------
+
+> .\people\urls.py //--------------// Configuração das URLS do componente
+
+> .\people\models.py //--------------// Implementação das models do componente 
+
+> .\people\admin.py //--------------// Os registros das models do componente deve ser feito no admin.py
+
+> .\people\views.py //--------------// Implementação da renderização das views do componente 
+
+> .\people\templates\... //--------------// Diretório das views em html 
+
+> .\people\migrations\... //--------------// Diretório das migrations do componentes, geradas a partir das models
