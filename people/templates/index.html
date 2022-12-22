@@ -1,0 +1,29 @@
+<html>
+
+<head>
+
+</head>
+
+<body style="text-align: center;  background: gray; color: rgb(253, 253, 253);">
+    <h1>App Python Django</h1>
+
+    <ul style="list-style-type: none;">
+        {% for person in people %}
+        <li>
+            <p>
+                {{person.id}} - {{person.name}}
+                <a style="color: rgb(156, 209, 255);" href="{% url 'edit' person.id%}">editar</a>
+                <a style="color: rgb(156, 209, 255);" href="{% url 'delete' person.id%}">remover</a>
+            </p>
+        </li>
+        {% endfor %}
+    </ul>
+
+    <form action="{% url 'save' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="name">
+        <button type="submit">Adicionar</button>
+    </form>
+</body>
+
+</html>
