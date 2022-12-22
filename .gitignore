@@ -1,7 +1,6 @@
-.vscode/*
+Scripts/
+.vscode/
 lib/* 
-Scripts/*
-db.sqlite3
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
