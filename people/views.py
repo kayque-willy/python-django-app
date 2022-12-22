@@ -33,5 +33,3 @@ def delete(request, id):
     person.delete()
     people = People.objects.all()
     return render(request, "index.html", {"people": people})
-
-    # return redirect(home)
