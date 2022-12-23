@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block 'title' %}
+<h2>Exemplo de CRUD</h2>
+{% endblock %}
+
+{% block 'content' %}
+<ul style="list-style-type: none;">
+    {% for person in people %}
+    <li>
+        <p>
+            {{person.id}} - {{person.name}}
+            <a style="color: rgb(156, 209, 255);" href="{% url 'edit' person.id%}">editar</a>
+            <a style="color: rgb(156, 209, 255);" href="{% url 'delete' person.id%}">remover</a>
+        </p>
+    </li>
+    {% endfor %}
+</ul>
+
+<form action="{% url 'save' %}" method="post">
+    {% csrf_token %}
+    <input type="text" placeholder="name" name="name">
+    <input type="email" placeholder="nome@email.com" name="email">
+    <button type="submit">Adicionar</button>
+</form>
+{% endblock %}

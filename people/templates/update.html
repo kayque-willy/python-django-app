@@ -1,21 +1,17 @@
-<html>
+{% extends "base.html" %}
 
-<head>
+{% block 'title' %}
+<h2>Editar</h2>
+<h2>
+    {{person.id}} - {{person.name}}
+</h2>
+{% endblock %}
 
-</head>
-
-<body style="text-align: center;  background: gray; color: rgb(253, 253, 253);">
-    <h1>App Python Django</h1>
-
-    <h2>
-        {{person.id}} - {{person.name}}
-    </h2>
-
-    <form action="{% url 'update' person.id %}" method="post">
-        {% csrf_token %}
-        <input type="text" name="name" value="{{person.name}}">
-        <button type="submit">Editar</button>
-    </form>
-</body>
-
-</html>
+{% block 'content' %}
+<form action="{% url 'update' person.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{person.name}}">
+    <input type="email" placeholder="nome@email.com" name="email" value="{{person.email}}">
+    <button type="submit">Editar</button>
+</form>
+{% endblock %}

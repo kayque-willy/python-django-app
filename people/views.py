@@ -5,14 +5,15 @@ from people.models import People
 # Create your views here.
 def home(request):
     people = People.objects.all()
-    return render(request, "index.html", {"people": people})
+    return render(request, "people.html", {"people": people})
 
 
 def save(request):
     vname = request.POST.get("name")
-    People.objects.create(name=vname)
+    vemail = request.POST.get("email")
+    People.objects.create(name=vname, email=vemail)
     people = People.objects.all()
-    return render(request, "index.html.", {"people": people})
+    return render(request, "people.html.", {"people": people})
 
 
 def edit(request, id):
@@ -32,4 +33,4 @@ def delete(request, id):
     person = People.objects.get(id=id)
     person.delete()
     people = People.objects.all()
-    return render(request, "index.html", {"people": people})
+    return render(request, "people.html", {"people": people})
