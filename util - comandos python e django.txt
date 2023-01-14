@@ -1,0 +1,38 @@
+--------------------------------- AMBIENTE DE DESENVOLVIMENTO ------------------------------------
+
+> $  py -m venv nome-projeto //--------------// [OBRIGATÓRIO] Cria um ambiente de desenvolvimento python
+
+(1) > $ cd scripts //--------------// Navega para a pasta scripts
+
+(2) > $  ./scripts/activate //--------------// [OBRIGATÓRIO] Executa a o ambiente, irá aparecer (nome-projeto) no terminal
+
+(3) > $  cd.. //--------------// Retorn a pasta raiz do projeto
+
+----------------------------------------- INSTALAÇÃO -------------------------------------------------
+
+> $  pip install django //--------------// [OBRIGATÓRIO] Instala o Django na pasta raiz do projeto
+
+--------------------------------------- CRIAÇÃO PROJETO ------------------------------------------------
+
+> $  django-admin startproject nome-project . //--------------// Cria o projeto Django com o nome "nome-project"
+
+> $  py .\manage.py startapp nome-app //--------------// Cria um app (componente) no projeto com o nome "nome-app", é necessário adicionar também no arquivo settings.py
+
+---------------------------------- BANCO DE DADOS - MIGRATIONS -------------------------------------------
+
+> $  py .\manage.py makemigrations  //--------------// Criação das migrations do banco de dados
+
+> $  py .\manage.py migrate  //--------------// Criação do banco de dados, por padrão é criado um sqlite local
+
+----------------------------------------- USUÁRIOS  -------------------------------------------------
+
+> $  py .\manage.py createsuperuser  //--------------// Cria o administrador
+
+----------------------------------------- EXECUÇÃO -------------------------------------------------
+
+> $  py nome-arquivo.py //--------------// Executa arquivo python
+
+> $  py .\manage.py runserver  //--------------// Executa o projeto Django
+
+
+
